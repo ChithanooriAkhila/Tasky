@@ -28,6 +28,40 @@
     <title>Tasky</title>
   </head>
   <body>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="imageurl" class="form-label">Image Url</label>
+          <input type="url" class="form-control" id="imageurl" aria-describedby="Image url" placeholder="https://example.com/hello.jpg">
+        </div>
+        <div class="mb-3">
+          <label for="tasktitle" class="form-label">Task Title</label>
+          <input type="text" class="form-control" id="tasktitle" aria-describedby="Task title" placeholder="eg: API Integration">
+        </div>
+        <div class="mb-3">
+          <label for="tasktype" class="form-label">Task Type</label>
+          <input type="text" class="form-control" id="tasktype" aria-describedby="TaskType" placeholder="eg: work">
+        </div>
+        <div class="mb-3">
+          <label for="taskdescription" class="form-label">Task Description</label>
+          <textarea rows="6" class="form-control" id="taskdescription" aria-describedby="Task Description" placeholder="Describe Your Task in Detail"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="saveChanges() " data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold text-primary" href="#">Tasky</a>
@@ -48,7 +82,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
           </ul>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="fas fa-plus"></i> Add New
           </button>
         </div>
@@ -73,7 +107,7 @@
       </div>
       <!-- cards-->
       <section>
-          <div class="row">
+          <div class="row task__container">
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center">
                     <div class="card-header d-flex justify-content-end gap-2"><button type="button" class="btn btn-outline-success"><i class="fas fa-pencil-alt"></i></button>
@@ -99,5 +133,6 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"> </script>
   </body>
 </html>
